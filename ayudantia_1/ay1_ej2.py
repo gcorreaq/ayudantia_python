@@ -1,5 +1,5 @@
 hour = int(raw_input('Hora:'))
-meridiem = str(raw_input('AM o PM?: '))
+meridiem = raw_input('AM o PM?: ')
 
 if meridiem == 'am':
 	print 'Buenos dias!'
