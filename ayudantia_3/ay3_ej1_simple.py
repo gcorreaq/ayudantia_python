@@ -8,4 +8,4 @@ if rook_col == bishop_col or rook_row == bishop_row:
 elif abs(bishop_row - rook_row) == abs(bishop_col - rook_col):
 	print 'Alfil captura torre'
 else:
-	print 'Ups!'
+	print 'Ninguno captura'
