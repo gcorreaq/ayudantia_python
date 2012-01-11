@@ -17,7 +17,7 @@ def get_int_list(initial_message, exit_value):
 
         if data != exit_value:
             resultado.append(int(data))
-        else
+        else:
             break
     
     return resultado

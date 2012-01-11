@@ -9,14 +9,17 @@ def desv_estandar(datos):
 
 def varianza(datos):
     suma = 0.0
+    media_datos = media(datos)
+
     for dato in datos:
-        suma += (dato ** 2)
+        print dato
+        suma += ((dato - media_datos) ** 2)
     
-    return (suma / len(datos)) - (media(datos) ** 2)
+    return suma / len(datos)
 
 def mediana(datos):
     # Necesitamos los datos ordenados
-    # Usamos la función sorted para no perder el orden original
+    # Usamos la funcion sorted para no perder el orden original
     datos_ordenados = sorted(datos)
     n = len(datos_ordenados)
 
@@ -41,16 +44,19 @@ def main():
         opcion = get_int("Opcion: ")
 
         if opcion != 5:
-            datos = get_int_list("Ingrese los datos")
+            datos = get_int_list("Ingrese los datos: ", 'OK')
 
-            if opcion == 1:
-                print 'Media:', media(datos)
-            elif opcion == 2:
-                print 'Mediana:', mediana(datos)
-            elif opcion == 3:
-                print 'Varianza:', varianza(datos)
-            elif opcion == 4:
-                print 'Desviacion Estandar:', desv_estandar(datos)
+            if len(datos) == 0:
+                print 'Debe ingresar datos!'
+            else:
+                if opcion == 1:
+                    print 'Media:', media(datos)
+                elif opcion == 2:
+                    print 'Mediana:', mediana(datos)
+                elif opcion == 3:
+                    print 'Varianza:', varianza(datos)
+                elif opcion == 4:
+                    print 'Desviacion Estandar:', desv_estandar(datos)
 
 if __name__ == '__main__':
     main()
