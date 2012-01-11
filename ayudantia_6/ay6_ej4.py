@@ -6,6 +6,9 @@ def add_movie(movies_list):
 
     movies_list.append((name, year))
 
+    # Esto aca abajo es lo mismo!
+    #movies_list.append((raw_input("Nombre: "), get_int("Estreno: ")))
+
 def delete_movie(movies_list):
     # Nombre exacto de la pelicula
     name = raw_input("Nombre: ")
@@ -24,11 +27,9 @@ def delete_movie(movies_list):
 def search_movie(movies_list):
     name = raw_input("Nombre: ")
 
-    for movie in movies_list:
-        m_name, m_year = movie
-
-        if m_name == name:
-            print m_name, '(', m_year, ')'
+    for movie_name, movie_year in movies_list:
+        if movie_name == name:
+            print movie_name, '(', movie_year, ')'
             break
 
 def show_all(movies_list):
