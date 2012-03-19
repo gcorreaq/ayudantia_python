@@ -37,7 +37,6 @@ def descubrir(campo):
 			# Solo aplicaremos el algoritmo cuando
 			# encontremos una mina
 			if campo[i][j] == -1:
-				
 				# Condiciones de borde
 				if i > 0:
 					start_x = -1
@@ -62,8 +61,9 @@ def descubrir(campo):
 				# Se empieza a recorrer alrededores
 				for x in range(start_x, end_x):
 					for y in range(start_y, end_y):
+
 						# Para evitar modificar la misma mina
-						if (x != 0) and (y != 0):
+						if (x != 0) or (y != 0):
 							# Coordenadas a moverse
 							vertical = i + x
 							horizontal = j + y
