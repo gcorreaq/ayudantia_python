@@ -10,4 +10,5 @@ def frecuencia_uso_de_puentes(archivo):
 		else:
 			puentes[puente] = 1
 
+	registros.close()
 	return puentes
