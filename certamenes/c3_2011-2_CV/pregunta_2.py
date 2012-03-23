@@ -1,24 +1,47 @@
 from numpy import *
 
 def sala_mas_concurrida(arreglo):
-	posicion_maximo = arreglo.argmax()
-	return (posicion_maximo / 20) + 1
+	totales = []
+	sala_actual = 1
 
-	# Otra opcion
-	#return (arreglo.argmax() / 9) + 1
+	# Se recorreran las filas del arreglo
+	for sala in arreglo:
+		total_asistentes = sum(sala)
+		totales.append((total_asistentes, sala_actual))
+		sala_actual += 1
+
+	# Se ordena la lista, se retorna el ultimo
+	# que corresponde al con mas visitas, y
+	# se retorna el numero de sala
+	return sorted(totales)[-1][1]
 
 def pelicula_mas_vista(arreglo):
-	posicion_maximo = arreglo.argmax()
-	return (posicion_maximo % 20) + 1
+	totales = []
 
-	# Otra opcion
-	#return (arreglo.argmax() % 9) + 1
+	# Para las columnas, es mejor sacar slices
+	_, cant_columnas = arreglo.shape
+
+	# Pelicula corresponde al indice de la columna actual
+	for pelicula in range(cant_columnas):
+		total_asistentes = sum(arreglo[:, pelicula])
+		totales.append((total_asistentes, pelicula))
+
+	# Primero se ordena la lista
+	totales.sort()
+	
+	# Se retorna el ultimo elemento, que corresponde
+	# a la pelicula con mas espectadores, y de este,
+	# se saca el segundo elemento de la tupla: el numero
+	# de pelicula
+	return totales[-1][1]
 
 #####################
 # Codigo de pruebas #
 #####################
 
 def main():
+	# Las filas son las salas, y las columnas las peliculas
+	# El valor en cada celda es la cantidad de asistentes
 	a = array([[163, 141,  58,  95, 127,  74, 278, 203, 160, 265, 251, 213, 173,  70, 184, 268, 139, 222, 107, 275],
         	   [ 77, 241, 242, 183, 172,  48, 196, 232, 161,  36, 262, 220, 155, 117,  62, 215, 208, 110,  54,  61],
                [171, 132, 284,  27,  56, 230,  31, 133, 169, 238, 125,  25,  39, 250, 259, 233, 219,  97,  49, 181],
