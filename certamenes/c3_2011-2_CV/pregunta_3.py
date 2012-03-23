@@ -1,4 +1,3 @@
-
 def main():
 	# Diccionario con los resultados
 	s = {
