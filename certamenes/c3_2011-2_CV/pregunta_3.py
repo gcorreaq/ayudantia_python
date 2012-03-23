@@ -1,63 +1,50 @@
 
 def main():
-	votaciones = open('votaciones.txt')
-	condorito = open('condorito.txt', 'w')
-	tremebunda = open('tremebunda.txt', 'w')
-	resultados = open('resultados.txt', 'w')
-
-	contador = 0
-
+	# Diccionario con los resultados
 	s = {
 		'Norte': {
-			'condorito': 0,
-			'tremebunda': 0
+			'Condorito': 0,
+			'Dona Tremebunda': 0
 		},
 		'Centro': {
-			'condorito': 0,
-			'tremebunda': 0
+			'Condorito': 0,
+			'Dona Tremebunda': 0
 		},
 		'Sur': {
-			'condorito': 0,
-			'tremebunda': 0
+			'Condorito': 0,
+			'Dona Tremebunda': 0
 		}
 	}
 
-	for l in votaciones:
-		contador += 1
-
-	votaciones.close()
+	# Se abren los archivos correspondientes
 	votaciones = open('votaciones.txt')
+	condorito = open('condorito.txt', 'w')
+	tremebunda = open('tremebunda.txt', 'w')
 
-	for i in range(contador / 2):
+	# Con esto se obtiene la cantidad de lineas
+	cant_lineas = len(open('votaciones.txt').readlines())
+
+	# Se leera cada dos lineas, lo que corresponde a un voto
+	for i in range(cant_lineas / 2):
 		linea = votaciones.readline().strip()
 
 		if linea != '':
+			# La linea leida es el candidato
 			candidato = linea
+			# El sector es la linea que sigue
 			sector = votaciones.readline().strip()
+
+			# Se formatean los datos a escribir
+			datos = "{0}\n{1}\n".format(candidato, sector)
 
 			if candidato == 'A':
 				# Tremebunda
-				tremebunda.write(candidato + '\n')
-				tremebunda.write(sector + '\n')
-
-				if sector == 'Norte':
-					s['Norte']['tremebunda'] += 1
-				elif sector == 'Centro':
-					s['Centro']['tremebunda'] += 1
-				elif sector == 'Sur':
-					s['Sur']['tremebunda'] += 1
-
-			else:
+				tremebunda.write(datos)
+				s[sector]['Dona Tremebunda'] += 1
+			elif candidato == 'B':
 				# Condorito
-				condorito.write(candidato + '\n')
-				condorito.write(sector + '\n')
-
-				if sector == 'Norte':
-					s['Norte']['condorito'] += 1
-				elif sector == 'Centro':
-					s['Centro']['condorito'] += 1
-				elif sector == 'Sur':
-					s['Sur']['condorito'] += 1
+				condorito.write(datos)
+				s[sector]['Condorito'] += 1
 		else:
 			return None
 
@@ -65,15 +52,14 @@ def main():
 	tremebunda.close()
 	votaciones.close()
 
-	resultados.write('Sector sur\n')
-	resultados.write('Dona Tremebunda ' + str(s['Sur']['tremebunda']) + ' votos\n')
-	resultados.write('Condorito ' + str(s['Sur']['condorito']) + ' votos\n')
-	resultados.write('Sector centro\n')
-	resultados.write('Dona Tremebunda ' + str(s['Centro']['tremebunda']) + ' votos\n')
-	resultados.write('Condorito ' + str(s['Centro']['condorito']) + ' votos\n')
-	resultados.write('Sector norte\n')
-	resultados.write('Dona Tremebunda ' + str(s['Norte']['tremebunda']) + ' votos\n')
-	resultados.write('Condorito ' + str(s['Norte']['condorito']) + ' votos\n')
+	resultados = open('resultados.txt', 'w')
+
+	# Se recorre el diccionario de resultados
+	# Esto permite una cantidad variable de sectores y candidatos
+	for sector, candidatos in s.items():
+		resultados.write('Sector ' + sector + '\n')
+		for candidato, votos in candidatos.items():
+			resultados.write(candidato + ' ' + str(votos) + ' votos\n')
 
 	resultados.close()
 
