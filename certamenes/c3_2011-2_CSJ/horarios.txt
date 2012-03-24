@@ -1,0 +1,5 @@
+1:Albert Einstein:Lunes 3-4/P307:Jueves 3-4/M201
+2:Justino Vivar:Lunes 1-2/M202:Martes 1-2/M201
+3:Ivan Rosa:Lunes 3-4/C203:Martes 5-6/B101
+4:Salomon Fuentes:Lunes 1-2/B102:Miercoles 1-2/P307
+5:Diego Campusano:Martes 1-2/C201:Jueves 3-4/P114
