@@ -22,7 +22,9 @@ def sumar_triangulo(matriz):
 	suma = 0
 
 	for fila in range(fila_inicio, filas):
-		suma += sum(matriz[fila, inicio:fin])
+		rebanada = matriz[fila, inicio:fin]
+		print rebanada
+		suma += sum(rebanada)
 
 		inicio -= 1
 		fin += 1
@@ -42,6 +44,7 @@ def main():
 			   [7, 1, 4, 5, 8, 1, 0],
 			   [1, 0, 3, 5, 7, 7, 6]])
 
+	print 'Matriz con N impar'
 	print sumar_triangulo(a)
 
 	b = array([[1, 7, 8, 9, 10, 3, 6, 8],
@@ -53,6 +56,7 @@ def main():
 			   [7, 8, 6, 4, 9, 1, 9, 0],
 			   [3, 4, 2, 6, 8, 9, 0, 5]])
 
+	print 'Matriz con N par'
 	print sumar_triangulo(b)
 
 if __name__ == '__main__':
