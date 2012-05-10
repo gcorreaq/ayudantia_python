@@ -22,9 +22,9 @@ for producto in range(1, cant_productos + 1):
     if productos_restantes < n:
         descuento = 0
     # De lo contrario, se revisa si hay que disminuir el descuento a
-    # la mitda
+    # la mitad
     else:
-        if producto % 3 == 0:
+        if producto % n == 0:
             descuento /= 2
 
 print 'Total:', total
