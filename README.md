@@ -7,6 +7,6 @@ Sientase libre de hacer forks para agregar/corregir resolución a ejercicios, ce
 
 Si quiere usar el contenido de este repositorio para sus ayudantías, una mención al autor siempre es bienvenida :)
 
-No olvide pasar por mi página de (Speaker Deck)[https://speakerdeck.com/gcorrea] para ver las slides con las ayudantías!
+No olvide pasar por mi página de [Speaker Deck](https://speakerdeck.com/gcorrea) para ver las slides con las ayudantías!
 
-Dudas/Consultas? Acá o a @gonchimon en (Twitter)[https://twitter.com/gonchimon]
+Dudas/Consultas? Acá o a @gonchimon en [Twitter](https://twitter.com/gonchimon)
