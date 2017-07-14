@@ -1,5 +1,4 @@
 from easy_input import get_int, get_float
-from easy_math import factorial
 from trigonometricas import seno_aprox, coseno_aprox, error
 from math import sin, cos
 

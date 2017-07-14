@@ -14,6 +14,7 @@ def bubble_sort(lista):
                 lista[i - 1] = tmp
                 cambio = True
 
+
 def main():
     num = 0
     lista = []
@@ -29,6 +30,7 @@ def main():
     print 'Numeros desordenados ->', lista
     bubble_sort(lista)
     print 'Numeros ordenados ->', lista
+
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,6 @@
 from easy_input import get_int
 
+
 def add_movie(movies_list):
     name = raw_input("Nombre: ")
     year = get_int("Estreno: ")
@@ -7,7 +8,8 @@ def add_movie(movies_list):
     movies_list.append((name, year))
 
     # Esto aca abajo es lo mismo!
-    #movies_list.append((raw_input("Nombre: "), get_int("Estreno: ")))
+    # movies_list.append((raw_input("Nombre: "), get_int("Estreno: ")))
+
 
 def delete_movie(movies_list):
     # Nombre exacto de la pelicula
@@ -19,10 +21,11 @@ def delete_movie(movies_list):
 
         if m_name == name:
             break;
-        
+
         index += 1
-    
+
     del movies_list[index]
+
 
 def search_movie(movies_list):
     name = raw_input("Nombre: ")
@@ -32,13 +35,14 @@ def search_movie(movies_list):
             print movie_name, '(', movie_year, ')'
             break
 
+
 def show_all(movies_list):
     print 'Lista de todas las peliculas'
     print ''
     print movies_list
 
-def main():
 
+def main():
     peliculas = []
 
     while True:
@@ -65,8 +69,9 @@ def main():
             print 'Opcion no valida'
 
         peliculas.sort()
-    
+
     raw_input('Terminado. Enter para salir...')
+
 
 if __name__ == '__main__':
     main()

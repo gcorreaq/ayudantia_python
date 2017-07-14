@@ -2,7 +2,7 @@ n = int(raw_input("n: "))
 cant_productos = int(raw_input("Cantidad de productos: "))
 
 total = 0
-descuento = 0.2 # El 20%
+descuento = 0.2  # El 20%
 total_descuentos = 0
 productos_restantes = cant_productos
 

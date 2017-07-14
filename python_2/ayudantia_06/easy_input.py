@@ -1,11 +1,14 @@
 def get_int(message):
-	return int(raw_input(message))
+    return int(raw_input(message))
+
 
 def get_float(message):
-	return float(raw_input(message))
+    return float(raw_input(message))
+
 
 def get_bool(message):
-	return bool(raw_input(message))
+    return bool(raw_input(message))
+
 
 def get_int_list(initial_message, exit_value):
     resultado = []
@@ -19,5 +22,5 @@ def get_int_list(initial_message, exit_value):
             resultado.append(int(data))
         else:
             break
-    
+
     return resultado

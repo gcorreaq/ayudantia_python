@@ -6,13 +6,13 @@ def romano_a_arabigo(numero_romano):
     # Usamos un diccionario, ya que se adapta al concepto
     # de que a cada letra le corresponde un valor
     valores = {
-        'M' : 1000,
-        'D' : 500,
-        'C' : 100,
-        'L' : 50,
-        'X' : 10,
-        'V' : 5,
-        'I' : 1
+        'M': 1000,
+        'D': 500,
+        'C': 100,
+        'L': 50,
+        'X': 10,
+        'V': 5,
+        'I': 1
     }
 
     if len(numero_romano) > 0:
@@ -29,7 +29,7 @@ def romano_a_arabigo(numero_romano):
         else:
             # Si no, la letra es invalida
             print 'Valor invalido:', letra
-            return 'NaN' # NaN: Not A Number
+            return 'NaN'  # NaN: Not A Number
 
         # Si el valor anterior es mayor o igual que el
         # valor actual, se suman
@@ -47,6 +47,7 @@ def romano_a_arabigo(numero_romano):
 
     # Al terminar, retorna el numero resultante
     return resultado
+
 
 # Con upper() la letra siempre sera pasada a mayuscula
 numero_romano = raw_input("Numero Romano: ").upper()

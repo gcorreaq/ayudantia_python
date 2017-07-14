@@ -2,6 +2,7 @@ def mapping(data, function):
     for element in data:
         function(element)
 
+
 def var_dump(variable):
     var_type = type(variable)
     print var_type, variable,
@@ -11,12 +12,14 @@ def var_dump(variable):
     else:
         print ''
 
+
 def show_truncated(string):
     if len(string) <= 10:
         print string
     else:
         # Aca usamos un slice!
-        print "%(string)s..." % {"string" : string[0:10]}
+        print "%(string)s..." % {"string": string[0:10]}
+
 
 def main():
     a = ['Hola', 123, -0.341, True, (1, 2, 3)]
@@ -27,6 +30,7 @@ def main():
 
     # Mostrar strings cortados
     mapping(b, show_truncated)
+
 
 if __name__ == '__main__':
     main()

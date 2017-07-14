@@ -1,14 +1,15 @@
 from easy_input import get_int
 
+
 # Definicion de funciones para el programa
 def serie_multiplicacion(tope):
+    resultado = 1
 
-	resultado = 1
+    for i in range(1, tope + 1):
+        resultado *= i
 
-	for i in range(1, tope + 1):
-		resultado *= i
+    return resultado
 
-	return resultado
 
 # Inicio del programa
 n = get_int("N: ")

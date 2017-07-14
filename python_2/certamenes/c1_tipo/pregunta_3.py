@@ -8,7 +8,7 @@ iteracion = 1
 while True:
     # Factorial
     factorial = 1
-    
+
     for i in range(1, exponente + 1):
         factorial *= i
 

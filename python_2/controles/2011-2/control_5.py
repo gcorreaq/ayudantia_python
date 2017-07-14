@@ -1,16 +1,16 @@
 def comuna_con_menor_diferencia(temperaturas):
-	menor_diferencia = None
-	
-	for comuna in temperaturas:
-		nombre, extremas = comuna
+    menor_diferencia = None
 
-		diferencia = extremas[1] - extremas[0]
+    for comuna in temperaturas:
+        nombre, extremas = comuna
 
-		if menor_diferencia == None:
-			menor_diferencia = diferencia
-			comuna_menor_diferencia = nombre
-		elif diferencia < menor_diferencia:
-			menor_diferencia = diferencia
-			comuna_menor_diferencia = nombre
+        diferencia = extremas[1] - extremas[0]
 
-	return menor_diferencia
+        if menor_diferencia == None:
+            menor_diferencia = diferencia
+            comuna_menor_diferencia = nombre
+        elif diferencia < menor_diferencia:
+            menor_diferencia = diferencia
+            comuna_menor_diferencia = nombre
+
+    return menor_diferencia

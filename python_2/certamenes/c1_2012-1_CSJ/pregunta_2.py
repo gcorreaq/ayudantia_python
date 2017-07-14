@@ -2,7 +2,7 @@ anotaciones = raw_input("Anotaciones: ")
 
 # Descomentar esta linea y comentar la primera
 # para probar mas rapido!
-#anotaciones = 'DDTDLLDD DDLDT TDTLLD DDDDD'
+# anotaciones = 'DDTDLLDD DDLDT TDTLLD DDDDD'
 
 puntaje_total = 0
 puntaje_periodo = 0

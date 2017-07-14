@@ -1,11 +1,14 @@
 from easy_input import get_int, get_int_list
 from math import sqrt
 
+
 def media(datos):
     return float(sum(datos)) / len(datos)
 
+
 def desv_estandar(datos):
     return sqrt(varianza(datos))
+
 
 def varianza(datos):
     suma = 0.0
@@ -14,8 +17,9 @@ def varianza(datos):
     for dato in datos:
         print dato
         suma += ((dato - media_datos) ** 2)
-    
+
     return suma / len(datos)
+
 
 def mediana(datos):
     # Necesitamos los datos ordenados
@@ -29,6 +33,7 @@ def mediana(datos):
         mediana = datos_ordenados[((n + 1) / 2) - 1]
 
     return mediana
+
 
 def main():
     opcion = 0
@@ -57,6 +62,7 @@ def main():
                     print 'Varianza:', varianza(datos)
                 elif opcion == 4:
                     print 'Desviacion Estandar:', desv_estandar(datos)
+
 
 if __name__ == '__main__':
     main()

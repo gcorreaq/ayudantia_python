@@ -12,15 +12,15 @@ numero = int(numero)
 
 # Mientras el numero sea mayor a cero...
 while numero > 0:
-	# Se saca un digito del numero, se multiplica
-	# por la potencia actual para posicionarlo correctamente,
-	# y se suma al numero invertido
-	numero_inverido += (numero % 10) * potencia
+    # Se saca un digito del numero, se multiplica
+    # por la potencia actual para posicionarlo correctamente,
+    # y se suma al numero invertido
+    numero_inverido += (numero % 10) * potencia
 
-	# Se elimina el digito de mas a la derecha
-	numero /= 10
-	# Se disminuye la potencia para posicionar
-	# el siguiente digito donde corresponde
-	potencia /= 10
+    # Se elimina el digito de mas a la derecha
+    numero /= 10
+    # Se disminuye la potencia para posicionar
+    # el siguiente digito donde corresponde
+    potencia /= 10
 
 print numero_inverido
